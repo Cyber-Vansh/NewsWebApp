@@ -37,11 +37,12 @@ const App = () => {
 
     const requests = categories.map((category) => {
       return fetch(
-        `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20`,
+        `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20`,
         {
           method: "GET",
           headers: {
             "X-Api-Key": API_KEY,
+            Origin: "localhost",
           },
         }
       )
