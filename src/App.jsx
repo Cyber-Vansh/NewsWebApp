@@ -65,8 +65,8 @@ const App = () => {
       {
         method: "GET",
         headers: {
-          "X-Api-Key": API_KEY,
-          Origin: "localhost",
+          "X-Requested-With": "XMLHttpRequest",
+          Authorization: `Bearer ${API_KEY}`,
         },
       }
     )
