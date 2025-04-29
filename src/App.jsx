@@ -35,9 +35,15 @@ const App = () => {
       "science",
     ];
 
-    const requests = categories.map((category) => {
+   const requests = categories.map((category) => {
       return fetch(
-        `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20&apiKey=${API_KEY}`
+        `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20`,
+        {
+          method: "GET",
+          headers: {
+            "X-Api-Key": API_KEY,
+          },
+        }
       )
         .then((response) => response.json())
         .catch((err) => {
@@ -55,7 +61,13 @@ const App = () => {
   function searching(e) {
     setLoading(true);
     fetch(
-      `https://newsapi.org/v2/everything?q=${e}&sortBy=poularity&language=en&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=${e}&sortBy=popularity&language=en`,
+      {
+        method: "GET",
+        headers: {
+          "X-Api-Key": API_KEY,
+        },
+      }
     )
       .then((response) => response.json())
       .then((res) => {
