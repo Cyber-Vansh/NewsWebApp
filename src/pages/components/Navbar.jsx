@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
-import logo from "./../../assets/Screenshot_2025-04-10_at_11.55.54_PM-removebg-preview.png";
+import logo from "./../../assets/Logo.png";
 
 const Navbar = ({ searching, returnHome, theme, toggleTheme }) => {
   const [currentsearch, setCurrentsearch] = useState("");

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo from "./../../assets/Screenshot_2025-04-10_at_11.55.54_PM-removebg-preview.png";
+import logo from "./../../assets/Logo.png";
 
 const Footer = ({ theme }) => {
   return (

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Home from "./pages/Home.jsx";
 import Search from "./pages/Search.jsx";
 import "./App.css";
-import logo from "./assets/Screenshot_2025-04-10_at_11.55.54_PM-removebg-preview.png";
+import logo from "./assets/Logo.png";
 
 const API_KEY = "faf088c55c584e0cb817455b3afe9327";
 
