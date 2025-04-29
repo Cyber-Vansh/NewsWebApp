@@ -4,7 +4,7 @@ import Search from "./pages/Search.jsx";
 import "./App.css";
 import logo from "./assets/Logo.png";
 
-const API_KEY = "faf088c55c584e0cb817455b3afe9327";
+const API_KEY = "0981d7438a1d419888f3f0d3ef174ff6";
 
 const App = () => {
   const [allNewsData, setAllNewsData] = useState([]);
