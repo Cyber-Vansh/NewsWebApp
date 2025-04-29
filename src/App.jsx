@@ -37,14 +37,7 @@ const App = () => {
 
     const requests = categories.map((category) => {
       return fetch(
-        `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20`,
-        {
-          method: "GET",
-          headers: {
-            "X-Api-Key": API_KEY,
-            Origin: "localhost",
-          },
-        }
+        `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20&apiKey=${API_KEY}`
       )
         .then((response) => response.json())
         .catch((err) => {
@@ -62,22 +55,8 @@ const App = () => {
   function searching(e) {
     setLoading(true);
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${e}&sortBy=popularity&language=en`,
-      {
-        method: "GET",
-        headers: {
-          "X-Requested-With": "XMLHttpRequest",
-          Authorization: `Bearer ${API_KEY}`,
-        },
-      }
+      `https://newsapi.org/v2/everything?q=${e}&sortBy=poularity&language=en&apiKey=${API_KEY}`
     )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.articles);
-      })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      })
       .then((response) => response.json())
       .then((res) => {
         setSearchdata(res);
