@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar.jsx";
 import FeaturedSection from "./components/FeaturedSection.jsx";
 import TopHighlightSection from "./components/TopHighlightSection.jsx";
-import SlideshowSection from "./components/SlideShowSection.jsx";
+import SlideshowSection from "./components/SlideshowSection.jsx";
 import CategoryNewsSection from "./components/CategoryNewsSection.jsx";
 import Footer from "./components/Footer.jsx";
 
