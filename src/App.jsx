@@ -36,9 +36,8 @@ const App = () => {
     ];
 
     const requests = categories.map((category) => {
-      return fetch(
-        `https://newsapi.org/v2/top-headlines?category=${category}&language=en&pageSize=20&apiKey=${API_KEY}`
-      )
+      return fetch(`https://afhwpsyejohvmebujphg.supabase.co/functions/v1/news?type=top-headlines&category=${category}`)
+
         .then((response) => response.json())
         .catch((err) => {
           console.error(`Error fetching ${category}:`, err);
@@ -54,9 +53,8 @@ const App = () => {
 
   function searching(e) {
     setLoading(true);
-    fetch(
-      `https://newsapi.org/v2/everything?q=${e}&sortBy=poularity&language=en&apiKey=${API_KEY}`
-    )
+    fetch(`https://afhwpsyejohvmebujphg.supabase.co/functions/v1/news?type=search&q=${e}`)
+
       .then((response) => response.json())
       .then((res) => {
         setSearchdata(res);
