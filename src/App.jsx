@@ -4,7 +4,7 @@ import Search from "./pages/Search.jsx";
 import "./App.css";
 import logo from "./assets/Logo.png";
 
-const API_KEY = "0981d7438a1d419888f3f0d3ef174ff6";
+const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 const App = () => {
   const [allNewsData, setAllNewsData] = useState([]);
@@ -36,7 +36,7 @@ const App = () => {
     ];
 
     const requests = categories.map((category) => {
-      return fetch(`https://afhwpsyejohvmebujphg.supabase.co/functions/v1/news?type=top-headlines&category=${category}`)
+      return  fetch("/api/topHeadlines")
 
         .then((response) => response.json())
         .catch((err) => {
@@ -53,7 +53,7 @@ const App = () => {
 
   function searching(e) {
     setLoading(true);
-    fetch(`https://afhwpsyejohvmebujphg.supabase.co/functions/v1/news?type=search&q=${e}`)
+    fetch(`/api/searchNews?q=${encodeURIComponent(e)}`)
 
       .then((response) => response.json())
       .then((res) => {
