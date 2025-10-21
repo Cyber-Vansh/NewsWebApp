@@ -25,30 +25,16 @@ const App = () => {
   };
 
   useEffect(() => {
-    const categories = [
-      "general",
-      "technology",
-      "business",
-      "sports",
-      "health",
-      "entertainment",
-      "science",
-    ];
-
-    const requests = categories.map((category) => {
-      return  fetch("/api/topHeadlines")
-
-        .then((response) => response.json())
-        .catch((err) => {
-          console.error(`Error fetching ${category}:`, err);
-          return null;
-        });
-    });
-
-    Promise.all(requests).then((responses) => {
-      setAllNewsData(responses);
-      setLoading(false);
-    });
+    fetch("/api/topHeadlines")
+      .then((response) => response.json())
+      .then((data) => {
+        setAllNewsData(data); // directly store the 7-category array
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching headlines:", err);
+        setLoading(false);
+      });
   }, []);
 
   function searching(e) {
