@@ -1,5 +1,9 @@
+export const config = {
+  runtime: "nodejs",
+};
+
 export default async function handler(req, res) {
-  const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+  const NEWS_API_KEY = process.env.NEWS_API_KEY;
   const { q } = req.query;
 
   if (!q) return res.status(400).json({ error: "Query parameter missing" });
