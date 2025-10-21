@@ -4,7 +4,8 @@ import Search from "./pages/Search.jsx";
 import "./App.css";
 import logo from "./assets/Logo.png";
 
-const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+
+// to run locally, use `vercel dev` command
 
 const App = () => {
   const [allNewsData, setAllNewsData] = useState([]);
@@ -28,7 +29,7 @@ const App = () => {
     fetch("/api/topHeadlines")
       .then((response) => response.json())
       .then((data) => {
-        setAllNewsData(data); // directly store the 7-category array
+        setAllNewsData(data);
         setLoading(false);
       })
       .catch((err) => {
